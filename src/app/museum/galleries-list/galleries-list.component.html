@@ -1,0 +1,13 @@
+<div *ngFor="let gallery of museum">
+  <div class="album py-5">
+    <h3 class="d-flex justify-content-center margin_bottom">
+      {{ gallery.name }}
+    </h3>
+    <app-gallery
+      [museum]="gallery?.paintings"
+      (changeStatus)="onChangeStatus($event, gallery.id)"
+      (editArtist)="onEditArtist($event, gallery.id)"
+    ></app-gallery>
+  </div>
+  <br />
+</div>

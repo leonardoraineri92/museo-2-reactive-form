@@ -1,0 +1,28 @@
+<div class="margin-top">
+  <h6>Modifica artista</h6>
+
+  <form [formGroup]="form">
+    <input
+      type="text"
+      class="form-control margin-top"
+      placeholder="Nome Artista"
+      formControlName="name"
+      required=""
+    />
+    <label></label>
+    <input
+      type="text"
+      class="form-control margin-top"
+      formControlName="surname"
+      placeholder="Cognome Artista"
+      required=""
+    />
+    <button class="w-100 btn margin-top" (click)="onEditArtist()">Salva</button>
+    <div
+      class="invalid-feedback"
+      [hidden]="form.controls.name.valid || form.controls.name.pristine"
+    >
+      Inserisci i dati
+    </div>
+  </form>
+</div>
